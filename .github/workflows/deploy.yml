@@ -14,6 +14,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            git pull origin main && npm run build && pm2 nextjs-server
+            cd demo-next
+            git pull origin main
             npm run build
             pm2 restart nextjs-server
